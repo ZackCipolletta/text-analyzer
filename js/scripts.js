@@ -26,4 +26,22 @@ function numberOfOccurrencesInText(word, text) {
   return wordCount;
 }  
 
+function checkWordAgainstOffensiveWords(originalWord){
+  const offensiveWordsArr = ['zoinks', 'muppeteer', 'biffaroni', 'loopdaloop'];
+  if(offensiveWordsArr.includes(originalWord.toLowerCase())){
+    return ("*".repeat(originalWord.length))
+  }else{
+    return originalWord;
+  }
+}
+
+function doesThisContainOffensiveWords(text) {
+  const textArray = text.split(" "); //split the text into an array
+  let returnArray = [];
+  textArray.forEach(orgText => returnArray.push(checkWordAgainstOffensiveWords(orgText))); //for each word in the text, run a check function
+  return returnArray.join(' ');
+}
+
+
+
 //UI Logic

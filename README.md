@@ -68,3 +68,29 @@ const text = "Red! Red. I Like red, green and yellow.";
 const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
+
+## Describe: compareTwoWords()
+
+Test: "It should check if two strings are matched and return a result based on that"
+Code: 
+const replaceableWord = "wow"
+const checkingWord = "notWow"
+Expected Output: "Not match"
+
+Test: "It should check if two strings are matched and return a result based on that"
+Code: 
+const replaceableWord = "WOW"
+const checkingWord = "wow"
+Expected Output: "match"
+
+Test: "It should check if two strings are matched, if they don't then return the word we're checking, otherwise if they do match, return *s equal to the number of characters in the word"
+Code:
+const replaceableWord = "hello"
+const checkingWOrd = "hello"
+Expected Output: "*****"
+
+Test: "It should check if two strings are matched, if they don't then return the word we're checking, otherwise if they do match, return *s equal to the number of characters in the word"
+Code:
+const replaceableWord = "frank"
+const checkingWOrd = "hello"
+Expected Output: "frank"
