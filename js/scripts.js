@@ -14,9 +14,9 @@ function wordCounter(text) {
   return wordCount;
 }
 
-// if text.trim().lenth === 0){
-//   return 0;
-// }
-// else {
-
-// }
+function numberOfOccurrencesInText(word, text) {
+  if (word === text) {
+    return 1;
+  }
+  return 0;
+}
