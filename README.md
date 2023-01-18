@@ -69,7 +69,7 @@ const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
 
-## Describe: compareTwoWords()
+## Describe: checkWordAgainstOffensiveWords()
 
 Test: "It should check if two strings are matched and return a result based on that"
 Code: 
@@ -94,3 +94,44 @@ Code:
 const replaceableWord = "frank"
 const checkingWOrd = "hello"
 Expected Output: "frank"
+
+Test: "It should compare two strings even if one is capatilized"
+Code:
+const replaceableWord = "HELLO"
+const checkingWOrd = "hello"
+Expected Output: "*****"
+
+
+
+## Describe: doesThisContainOffensiveWords()
+
+Test: "It should take a string and split it at the spaces between words into an array"
+Code: 
+Const: textArray = "Hello this is a sentence"
+Const: textArray = []
+Expected Output: ['Hello', 'this', 'is', 'a', 'sentence']
+
+
+Test: "It should take each word from a sentence in sequence, create an array from the sentence, pass each word (object) in the array to the checkWordAgainstOffensiveWords function, then add the return value from that function them one by one to the empty textArray."
+Code: 
+Const: textArray = "Hello this is a sentence containing zoinks"
+Const: textArray = []
+Expected Output: ['Hello', 'this', 'is', 'a', 'sentence', 'containing', '******']
+
+Test: "It should take a sentence, break it down into an array, pass the array elements into checkWordAgainstOffensiveWords, then add each output element to the emtpy textArray array and join them into a single sentence then return the sentene."
+Code: 
+Const: textArray = "Hello this is a sentence containing zoinks"
+Const: textArray = []
+Expected Output: 'Hello this is a sentence containing ******'
+
+
+
+
+
+
+
+
+
+
+
+
