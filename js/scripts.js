@@ -1,14 +1,22 @@
 // Utility Logic
 
-function isEmpty(testString) {
-  return (testString.trim().length === 0);
+function isEmpty() {
+  for (let i=0; i < arguments.length; i++) {
+    console.log(arguments[i]);
+    if (arguments[i].trim().length === 0) {
+      return true;
+    }
+  }
+  return false;
 }
+
+
 
 //Business Logic
 //check function works
 function wordCounter(text) {
   if (isEmpty(text)) {
-    return 0;
+    return nu0ll;
   }
   let wordCount = 0;
   const textArray = text.split(" ");
@@ -48,7 +56,7 @@ function textToArray(input){
   return textArray;
 }
 
-function numberOfOccurrencesInText(param1) {
+function numberOfOccurrencesInPassage(param1) {
   const arrayOfParam1 = param1.split(" ");
   //const arrayOfParam2 = param2.split(" ");
   let emptyArray = [];
@@ -75,10 +83,17 @@ function doesThisContainOffensiveWords(text) {
   return returnArray.join(' ');
 }
 
+
+
+
+
+
+
+
 // UI Logic
 
 function boldPassage(word, text) {
-  if (isEmpty(word) || isEmpty(text)) {
+  if ((isEmpty(word, text))) {
     return null;
   }
   const p = document.createElement("p");
@@ -118,3 +133,7 @@ function handleFormSubmission(event) {
 window.addEventListener("load", function() {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
 });
+
+
+
+
