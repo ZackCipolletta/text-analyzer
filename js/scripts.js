@@ -113,9 +113,6 @@ window.addEventListener("load", function() {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
 });
 
-
-
-
 function numberOfOccurrencesInText(param1) {
   const arrayOfParam1 = param1.split(" ");
   //const arrayOfParam2 = param2.split(" ");
