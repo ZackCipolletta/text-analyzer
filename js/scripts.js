@@ -48,19 +48,25 @@ function textToArray(input){
   return textArray;
 }
 
-function numberOfTimesUsed(text){
-  let textArray = textToArray(text);
-  let numberOfTimesWordUsed = 0;
-  let elementTimes = [];
-  textArray.forEach(function(element) {
-    if(textArray.includes(element)) {
-      numberOfTimesWordUsed ++;
+function numberOfOccurrencesInText(param1) {
+  const arrayOfParam1 = param1.split(" ");
+  //const arrayOfParam2 = param2.split(" ");
+  let emptyArray = [];
+  let param1Array = [];
+  arrayOfParam1.forEach(function(element1) { 
+    let wordCount = 0;
+    if(!param1Array.includes(element1)){
+      param1Array.push(element1);
+      arrayOfParam1.forEach(function(element2){
+        if(element1.includes(element2)) {
+          wordCount ++;
+        }
+      })
+      emptyArray.push([element1, wordCount]);
     }
-    elementTimes.push([element, numberOfTimesWordUsed]);
-  })
-    return elementTimes;
-  }
-
+  });
+  console.log(emptyArray);
+}
 
 function doesThisContainOffensiveWords(text) {
   textToArray(text); //split the text into an array
@@ -112,23 +118,3 @@ function handleFormSubmission(event) {
 window.addEventListener("load", function() {
   document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
 });
-
-function numberOfOccurrencesInText(param1) {
-  const arrayOfParam1 = param1.split(" ");
-  //const arrayOfParam2 = param2.split(" ");
-  let emptyArray = [];
-  let param1Array = [];
-  arrayOfParam1.forEach(function(element1) { 
-    let wordCount = 0;
-    if(!param1Array.includes(element1)){
-      param1Array.push(element1);
-      arrayOfParam1.forEach(function(element2){
-        if(element1.includes(element2)) {
-          wordCount ++;
-        }
-      })
-      emptyArray.push([element1, wordCount]);
-    }
-  });
-  console.log(emptyArray);
-}
