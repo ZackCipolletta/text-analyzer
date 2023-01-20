@@ -50,23 +50,29 @@ function textToArray(input){
 
 function numberOfOccurrencesInText(param1) {
   const arrayOfParam1 = param1.split(" ");
-  //const arrayOfParam2 = param2.split(" ");
-  let emptyArray = [];
-  let param1Array = [];
+
+  let results = [];
+  let checkArray = [];
   arrayOfParam1.forEach(function(element1) { 
     let wordCount = 0;
-    if(!param1Array.includes(element1)){
-      param1Array.push(element1);
+    if(!checkArray.includes(element1)){
+      checkArray.push(element1);
       arrayOfParam1.forEach(function(element2){
         if(element1.includes(element2)) {
           wordCount ++;
         }
       })
-      emptyArray.push([element1, wordCount]);
+      results.push([element1, wordCount]);
     }
   });
-  console.log(emptyArray);
+ return results;
 }
+
+ 
+// [var].forEach(function(element){ 
+//   console.log(element[0]+ ': '+element[1]);
+// });
+// ^^ to print to the console results of numberOfOccurrencesInText, create var then insert into forEach loop
 
 function doesThisContainOffensiveWords(text) {
   textToArray(text); //split the text into an array
