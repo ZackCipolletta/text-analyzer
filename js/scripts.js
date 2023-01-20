@@ -11,7 +11,6 @@ function isEmpty() {
 }
 
 
-
 //Business Logic
 //check function works
 function wordCounter(text) {
@@ -88,12 +87,6 @@ function doesThisContainOffensiveWords(text) {
   textArray.forEach(orgText => returnArray.push(checkWordAgainstOffensiveWords(orgText))); //for each word in the text, run a check function
   return returnArray.join(' ');
 }
-
-
-
-
-
-
 
 
 // UI Logic
