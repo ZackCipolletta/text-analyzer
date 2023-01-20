@@ -135,15 +135,3 @@ Code:
 Const: textArray = "Hello this is a sentence containing zoinks"
 Const: textArray = []
 Expected Output: 'Hello this is a sentence containing ******'
-
-
-
-
-
-
-
-
-
-
-
-
